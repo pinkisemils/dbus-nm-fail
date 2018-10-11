@@ -1,0 +1,8 @@
+[package]
+name = "dbus-nm-fail"
+version = "0.1.0"
+authors = ["Emīls Piņķis <emils@mullvad.net>"]
+edition = "2018"
+
+[dependencies]
+dbus = "*"
