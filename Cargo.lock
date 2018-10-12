@@ -1,17 +1,17 @@
 [[package]]
 name = "dbus"
 version = "0.6.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "git+https://github.com/diwic/dbus-rs#4dc6b24b118e390824dcaa5fd6123eb62e6f4ae0"
 dependencies = [
  "libc 0.2.43 (registry+https://github.com/rust-lang/crates.io-index)",
- "libdbus-sys 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libdbus-sys 0.1.3 (git+https://github.com/diwic/dbus-rs)",
 ]
 
 [[package]]
 name = "dbus-nm-fail"
 version = "0.1.0"
 dependencies = [
- "dbus 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dbus 0.6.2 (git+https://github.com/diwic/dbus-rs)",
 ]
 
 [[package]]
@@ -22,7 +22,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "libdbus-sys"
 version = "0.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "git+https://github.com/diwic/dbus-rs#4dc6b24b118e390824dcaa5fd6123eb62e6f4ae0"
 dependencies = [
  "pkg-config 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -33,7 +33,7 @@ version = "0.3.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [metadata]
-"checksum dbus 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "3e34c238dfb3f5881d46ad301403cd8f8ecf946e2a4e89bdd1166728b68b5008"
+"checksum dbus 0.6.2 (git+https://github.com/diwic/dbus-rs)" = "<none>"
 "checksum libc 0.2.43 (registry+https://github.com/rust-lang/crates.io-index)" = "76e3a3ef172f1a0b9a9ff0dd1491ae5e6c948b94479a3021819ba7d860c8645d"
-"checksum libdbus-sys 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "8720f9274907052cb50313f91201597868da9d625f8dd125f2aca5bddb7e83a1"
+"checksum libdbus-sys 0.1.3 (git+https://github.com/diwic/dbus-rs)" = "<none>"
 "checksum pkg-config 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)" = "676e8eb2b1b4c9043511a9b7bea0915320d7e502b0a079fb03f9635a5252b18c"

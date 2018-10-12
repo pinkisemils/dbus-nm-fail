@@ -10,7 +10,9 @@ fn main() {
     let c = Connection::get_private(BusType::System).expect("failed to get a DBus connection");
     let paths = get_device_path(&c);
     let (config, version, path) = get_device_config(&c, paths);
-    set_device_config(&path, config, version);
+    println!("config signature - {}", config.signature());
+    set_device_config(&c, &path, config, version);
+    println!("success");
 }
 
 fn get_device_path(conn: &Connection) -> Vec<Path> {
@@ -56,14 +58,17 @@ fn get_device_config(conn: &Connection, paths: Vec<Path>) -> (DeviceConfig, u64,
 
 }
 
-fn set_device_config(path: &str, config: DeviceConfig, version: u64) {
-    let _msg = Message::new_method_call(
+fn set_device_config(conn: &Connection, path: &str, config: DeviceConfig, version: u64) {
+
+    let msg = Message::new_method_call(
         "org.freedesktop.NetworkManager",
         path,
         "org.freedesktop.NetworkManager.Device",
         "Reapply",
     )
     .expect("failed to construct a method call")
-    .append3(config, version, 0u32); // <------------ THIS CALL PANICS
+    .append3(config, version, 0u32);
+
+    conn.send_with_reply_and_block(msg, 5000).expect("This should work");
 }
 
